@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Tarefa</title>
+</head>
+<body>
+    <h1>Editar Tarefa</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="status">Status:</label>
+        <input type="checkbox" id="status" name="status" {% if task.status %}checked{% endif %}>
+        <p>Status atual: {{ task.status_display }}</p>
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Tarefa</title>
+</head>
+<body>
+    <h1>Editar Tarefa</h1>
+    <form method="post" action="{% url 'task_detail' task.id %}">
+        {% csrf_token %}
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ task.nome }}">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ task.descricao }}">
+        <label for="status">Status:</label>
+        <input type="checkbox" id="status" name="status" {% if task.status %}checked{% endif %}>
+        <input type="hidden" name="_method" value="PUT">
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ task.nome }}">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ task.descricao }}">
+        <label for="status">Status:</label>
+        <input type="checkbox" id="status" name="status" {% if task.status %}checked{% endif %}>
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html> -->
